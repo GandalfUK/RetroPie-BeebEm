@@ -9,9 +9,10 @@
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
-rp_module_id="beebem"
+rp_module_id="beebem2"
 rp_module_desc="beebem - BBC Micro Emulator"
 rp_module_licence="MIT https://raw.githubusercontent.com/zerojay/beebem/master/COPYING"
+rp_module_help="ROM Extensions: .ssd .img .adl .dsd\n\nCopy your BBC Micro games to $romdir/bbcmicro"
 rp_module_section="exp"
 rp_module_flags="!x86 !mali"
 
@@ -41,5 +42,6 @@ function install_beebem() {
 function configure_beebem() {
     mkRomDir "bbcmicro"
     moveConfigDir "$home/.beebem" "$md_conf_root/$md_id/"
-    addSystem 0 "$md_id" "bbcmicro" "xinit $md_inst/beebem %ROM%"
+    addEmulator 0 "$md_id" "bbcmicro" "xinit $md_inst/beebem %ROM%"
+    addSystem "bbcmicro" "BBC Micro" ".ssd .img .adl .dsd"
 }
