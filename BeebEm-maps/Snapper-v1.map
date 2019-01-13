@@ -1,0 +1,11 @@
+define p1up up
+define p1down down
+define p1left left
+define p1right right
+define p1start 1
+
+map p1left z
+map p1right x
+map p1down /
+map p1up '
+map p1start space
