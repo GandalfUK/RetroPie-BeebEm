@@ -1,41 +1,34 @@
-# RetroPie-Extra-unstable
+# RetroPie-BeebEm
 
-You are most likely looking for https://github.com/zerojay/RetroPie-Extra.
+This is a fork of https://github.com/zerojay/RetroPie-Extra-unstable
+It's only purpose is to make installing BeebEm to RetroPie easier.
+For that reason everything not related to BeebEm has been removed.
 
-This repository is for holding all of my work that isn't ready for inclusion in RetroPie-Extra for various reasons: unfinished, not working, etc...
+Changes
+1) A bug in the original set-up script, that failed to specifiy the appropriate file extentions for BeebEm, has been fixed.
+2) The installer now targets a version of BeebEm forked from https://github.com/roksoft/beebem-retropie which includes the ability to re-map BeebEm keys to those used by the Picade joystick and buttons (or in fact any other controller).
+3) An example of a key remapping file is provided, see here https://retropie.org.uk/forum/topic/2261/beebem-and-fun-arcade-control-modifications for details.
 
-#### Testing
-##### Emulators
-- [ ] - beebem.sh - BBC Micro emulator - Working, won't run game from command line. Disk load issue fixed.  
+## Installation.
 
-##### libretrocores
-- [ ] - lr-craft.sh - libretro-based Minecraft clone - Does not work on Pi due to missing OpenGLES2 support. Would require a version of RetroArch compiled against OpenGL. Not happening.  
-- [ ] - lr-sameboy.sh - Gameboy/Gameboy Color emulator for libretro - Something about how RetroPie-Setup compiles causes this to fail and I'm unsure why. Might be too heavy for Raspberry Pi 3 but seems fine on ODROID XU4.
+If you have BeebEm already installed by other means (e.g. via zerojay's Extra-unstable repo) then you will *probably* need to uninstall it via the RetroPie setup menu first (make any backups you think you may need!!)
 
-##### Ports
-- [ ] - abuse.sh - Classic action game - Appears to have some stability issues as well as problems with sound/audio dropping out. Does not full screen properly yet.  
-- [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
-- [ ] - caveexpress.sh - Cave Express game - Not working, some major compilation issues.
-- [ ] - extremetuxracer.sh - Extreme Linux racing game - ???
-- [ ] - f2bgl.sh - Fade To Black engine - Segfaults on launch.  
-- [ ] - freegish.sh - Gish clone - Runs with glshim however very, very slowly. Might need some additional glshim options.  
-- [ ] - fruity.sh - Fruity Game - Cannot load font?
-- [ ] - kodi.sh - Media Player - Installs v16 for Raspbian Jessie ONLY. Currently untested.  
-- [ ] - minetest.sh - Minecraft Clone - Tested and works with lowest resolution and settings, burningsvideo driver. Embed low options as default?  
-- [ ] - moonlight.sh - Open Source nVidia GameStreaming - A newer package is available, currently untested.  
-- [ ] - openfodder.sh - Open source Cannon Fodder engine - Instable, crashes during second mission.  
-- [ ] - roadfighter.sh - Open source remake of Konami's Road Fighter - Cannot compile as is under Stretch, bug is upstream.
-- [ ] - retrobattle.sh - No longer compiles under Stretch. Error is upstream.
-- [ ] - rockbot.sh - Open source Megaman style game - Cannot be compiled on Pi anymore, need new compilatin instructions.
-- [ ] - smw-netplay.sh - Super Mario War with netplay - Crashes before match starts.
-- [ ] - umario.sh - Super Mario Bros. Remake - Runs but doesn't scale properly. Fix incoming soon.
-- [ ] - zelda3t.sh - Zelda fangame - Seems to be stuttery and glitchy looking even on an overclocked pi3. Defaults to french.
+1) Plug a USB keyboard into you RetroPi/Picade machine.
 
-##### Supplementary
-- [ ] - moonlight.sh - Unfinished, DO NOT USE.
+2) When in EmulationStation (i.e. not running a game), hit F4 on the keyboard to bring up a console.
 
-##### Support Scripts
-- [ ] - exodos-setup.sh - Setup script for adding working eXoDOS collection to EmulationStation - Not completed yet. See https://github.com/zerojay/RetroPie-Extra/issues/76
+3) Clone this repoo:
+```
+git clone https://github.com/GandalfUK/RetroPie-BeebEm.git
+```
 
-### Hall of Fame - Scripts accepted into RetroPie-Extra
-- [X] - freedink.sh - Dink Smallwood engine - Lots of flicker on sprites and text, currently solved. Tested and works well.  
+4) Run the install script from within the repo directory (you may have to make the script executable):
+```
+cd RetroPie-BeebEm
+chmod a+x install.sh
+./install.sh
+```
+5) Exit the console (type `exit`) and go to the RetroPie setup menu. Select the Manage Packages option and choose the Experimantal packages. You should now see BeebEm in the list. Select BeebEm and install it.
+
+That's it! Put your game-files/disk-images in roms/beebem/ as you would for any other system. If you want to use the key re-mapping features, copy you map file in here too (there is an example map-file for snapper provided in the `BeebEm-maps` dir. Note that the name of the map file(s) must match the name of the game/disk-image file(s). 
+
