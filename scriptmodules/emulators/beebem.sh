@@ -21,7 +21,7 @@ function depends_beebem() {
 }
 
 function sources_beebem() {
-    gitPullOrClone "$md_build" https://github.com/zerojay/beebem.git
+    gitPullOrClone "$md_build" https://github.com/GandalfUK/beebem-retropie.git
 }
 
 function build_beebem() {
