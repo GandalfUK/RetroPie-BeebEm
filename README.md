@@ -1,7 +1,7 @@
 # RetroPie-BeebEm
 
 This is a fork of https://github.com/zerojay/RetroPie-Extra-unstable
-It's only purpose is to make installing BeebEm to RetroPie easier.
+Its only purpose is to make installing BeebEm to RetroPie easier.
 For that reason everything not related to BeebEm has been removed.
 
 Changes
@@ -11,9 +11,9 @@ Changes
 
 ## Installation.
 
-If you have BeebEm already installed by other means (e.g. via zerojay's Extra-unstable repo) then you will *probably* need to uninstall it via the RetroPie setup menu first (make any backups you think you may need!!)
+If you have BeebEm already installed by other means (e.g. via zerojay's Extra-unstable repo) then you will *probably* need to uninstall it via the RetroPie setup menu first (make any backups you may need!!)
 
-1) Plug a USB keyboard into you RetroPi/Picade machine.
+1) Plug a USB keyboard into your RetroPi/Picade machine.
 
 2) When in EmulationStation (i.e. not running a game), hit F4 on the keyboard to bring up a console.
 
@@ -30,5 +30,4 @@ chmod a+x install.sh
 ```
 5) Exit the console (type `exit`) and go to the RetroPie setup menu. Select the Manage Packages option and choose the Experimantal packages. You should now see BeebEm in the list. Select BeebEm and install it.
 
-That's it! Put your game-files/disk-images in roms/beebem/ as you would for any other system. If you want to use the key re-mapping features, copy you map file in here too (there is an example map-file for snapper provided in the `BeebEm-maps` dir. Note that the name of the map file(s) must match the name of the game/disk-image file(s). 
-
+That's it! Put your game-files/disk-images in roms/beebem/ as you would for any other system. If you want to use the key re-mapping features, copy your map files in here too (there is an example map-file for snapper provided in the `BeebEm-maps` dir. Note that the name of the map file(s) must match the name of the game/disk-image file(s). 
